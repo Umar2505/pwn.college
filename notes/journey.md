@@ -13,6 +13,11 @@ As I embark on this journey, I aim to document not only the challenges I face bu
 - **Insights:** The hardest task so far
 - **Progress:** DONE IT on 10th of Sep 2025
 
+### Computing 101: GDB scripting
+- **Date Started:** 11.09.2025
+- **Insights:** Learned interesting tool (GDB) for debugging code
+- **Progress:** DONE IT
+
 ## Conclusion
 
 This journey is not just about completing tasks; it's about growth, learning, and the pursuit of knowledge in the field of cybersecurity. I look forward to documenting my progress and sharing my insights as I continue through the challenges at pwn.college.
