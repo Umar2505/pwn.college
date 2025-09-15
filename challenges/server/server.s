@@ -27,6 +27,12 @@ _start:
     mov rax, 50
     syscall
 
+    mov rdi, r8
+    mov rsi, 0
+    mov rdx, 0
+    mov rax, 43
+    syscall
+
     mov rdi, 0
     mov rax, 60
     syscall
